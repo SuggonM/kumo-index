@@ -16,7 +16,7 @@ const listingCSV = await listingRes.text();
 
 const files = csvParse(listingCSV, {
 	delimiter: ';',
-	columns: [ 'filePath', '🤔', 'MD5hash', 'streamDirNum' ],
+	columns: [ 'filePath', 'fileSize', 'MD5hash', 'streamDirNum' ],
 	skipRecordsWithError: true
 });
 
