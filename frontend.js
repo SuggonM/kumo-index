@@ -18,3 +18,15 @@ for (const [i, filePath] of filePaths.entries()) {
 	fileEntry.appendChild(fileEntryLink);
 	fileList.appendChild(fileEntry);
 }
+
+if (!fileList.children.length) {
+	fileList.textContent = 'Error fetching or processing version directory list';
+	fileList.style.color = 'red';
+}
+
+const url = new URL(window.location);
+const hasVersionParam = url.searchParams.get('version');
+if (!hasVersionParam) {
+	url.searchParams.set('version', version);
+	window.history.pushState(null, null, url);
+}

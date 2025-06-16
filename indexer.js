@@ -7,10 +7,19 @@ if (isBrowser) {
 	fetch = url => proxyFetch(proxy + url);
 }
 
-const versionURL = 'https://kumo.pro.g123-cpp.com/prod/kumo/version.txt';
-const versionRes = await fetch(versionURL);
-const versionJson = await versionRes.json();
-const version = versionJson.url[0];
+const versionQuery = isBrowser
+	? new URL(window.location).searchParams.get('version')
+	: process.env.VERSION;
+
+async function latestVersion() {
+	const versionURL = 'https://kumo.pro.g123-cpp.com/prod/kumo/version.txt';
+	const versionRes = await fetch(versionURL);
+	const versionJson = await versionRes.json();
+	const latest = versionJson.url[0];
+	return latest;
+}
+
+const version = versionQuery || await latestVersion();
 
 const baseURL = `https://kumo.pro.g123-cpp.com/${version}`;
 
