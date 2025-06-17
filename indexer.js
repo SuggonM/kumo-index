@@ -12,10 +12,12 @@ const versionQuery = isBrowser
 	: process.env.VERSION;
 
 async function latestVersion() {
-	const versionURL = 'https://kumo.pro.g123-cpp.com/prod/kumo/version.txt';
-	const versionRes = await fetch(versionURL);
-	const versionJson = await versionRes.json();
-	const latest = versionJson.url[0];
+	// const versionURL = 'https://kumo.pro.g123-cpp.com/prod/kumo/version.txt';
+	// const versionRes = await fetch(versionURL);
+	// const versionJson = await versionRes.json();
+	// const latest = versionJson.url[0];
+	const FINAL = 'v1.1.0r37';
+	const latest = FINAL;
 	return latest;
 }
 

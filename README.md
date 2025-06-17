@@ -1,3 +1,8 @@
+> [!Important]
+> Due to the changes in game's asset directory tree, this branch has been archived. It only supports versions from `v1.1.0r11`[^1] to `v1.1.0r37`[^2].[^3]
+>
+> The [`index.html`](./index.html) on this branch is still functional and can be hosted locally.
+
 # kumo-index
 Asset directory listing for game [蜘蛛ですが、なにか? 迷宮の支配者](https://g123.jp/game/kumo)
 
@@ -29,7 +34,7 @@ $ node ./download-data.js
 ## How-it-works
 1. *https://kumo.pro.g123-cpp.com/prod/kumo/version.txt* (json) contains the current version of the game
 2. *[https://kumo.pro.g123-cpp.com/`<version>`/update.txt](https://kumo.pro.g123-cpp.com/\<version>/update.txt)* (csv) contains the directory listing for that `<version>`
-3. You then [analyze the patterns](indexer.js#L29-L31) and interpret the list into corresponding `StreamingAssets/` paths
+3. You then [analyze the patterns](https://github.com/SuggonM/kumo-index/blob/ca99bbc1194e64c3878a7a282345ed5a0ebf2c59/indexer.js#L29-L31) and interpret the list into corresponding `StreamingAssets/` paths
 
 ## Extra Data Endpoints
 - GET request to *https://h5.g123.jp/api/v1/session?appId=kumo* generates a unique 418-byte auth `code` for your account (expires after 7 days)
@@ -37,3 +42,7 @@ $ node ./download-data.js
 
 ## Next Steps?
 The `.data` files are typical UnityFS assets, which can be ripped and transformed into readable files (skeletons, textures, audios, json, etc.)
+
+[^1]: `r11`: Nov 2024 - a month after game release
+[^2]: `r37`: May 2025 - slime collab event opening
+[^3]: `curl -I https://kumo.pro.g123-cpp.com/v1.1.0r[11-37]/update.txt | grep last-modified`
