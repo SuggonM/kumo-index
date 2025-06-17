@@ -1,6 +1,8 @@
 # kumo-index
 Asset directory listing for game [蜘蛛ですが、なにか? 迷宮の支配者](https://g123.jp/game/kumo)
 
+For archived versions and overall version history, see this repo's [branches](/../../branches).
+
 ## API
 ### [`indexer.js`](indexer.js)
 Fetches file list (`.csv`) and parses into array
@@ -29,7 +31,7 @@ $ node ./download-data.js
 ## How-it-works
 1. *https://kumo.pro.g123-cpp.com/prod/kumo/version.txt* (json) contains the current version of the game
 2. *[https://kumo.pro.g123-cpp.com/`<version>`/update.txt](https://kumo.pro.g123-cpp.com/\<version>/update.txt)* (csv) contains the directory listing for that `<version>`
-3. You then [analyze the patterns](indexer.js#L29-L31) and interpret the list into corresponding `StreamingAssets/` paths
+3. You then [analyze the patterns](https://github.com/SuggonM/kumo-index/blob/ca99bbc1194e64c3878a7a282345ed5a0ebf2c59/indexer.js#L29-L31) and interpret the list into corresponding `StreamingAssets/` paths
 
 ## Extra Data Endpoints
 - GET request to *https://h5.g123.jp/api/v1/session?appId=kumo* generates a unique 418-byte auth `code` for your account (expires after 7 days)

@@ -21,7 +21,7 @@ async function latestVersion() {
 
 const version = versionQuery || await latestVersion();
 
-const baseURL = `https://kumo.pro.g123-cpp.com/${version}`;
+const baseURL = `https://kumo.pro.g123-cpp.com/${version}/StreamingAssets`;
 
 const listingURL = `${baseURL}/update.txt`;
 const listingRes = await fetch(listingURL);
@@ -40,8 +40,8 @@ files.forEach(metadata => {
 	filePaths.push(metadata.filePath);
 	fileURLs.push(
 		(metadata.streamDirNum === '0')
-		? `${baseURL}/StreamingAssets/${metadata.filePath}`
-		: `${baseURL}/StreamingAssets/${metadata.filePath.replace('/', `/${metadata.streamDirNum}/`)}`
+		? `${baseURL}/${metadata.filePath}`
+		: `${baseURL}/${metadata.filePath.replace('/', `/${metadata.streamDirNum}/`)}`
 	);
 });
 
