@@ -1,0 +1,10 @@
+# https://github.com/orgs/community/discussions/16107#discussioncomment-8786272
+name: Trigger daily fetch on version-list branch
+
+on:
+  schedule:
+    - cron: 0 0 * * *
+
+jobs:
+  run-daily:
+    uses: SuggonM/kumo-index/.github/workflows/daily-fetch.yml@version-list
