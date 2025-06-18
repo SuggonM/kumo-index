@@ -8,8 +8,8 @@ console.log(`Downloading data from version ${version} ...`);
 
 const iteratorSize = files.windows.size;
 function* filesIterator() {
-	yield* filesWindowsExtra.entries();
 	yield* files.main.entries();
+	yield* filesWindowsExtra.entries();
 }
 
 let i = 1;
