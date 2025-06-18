@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: 0 0 * * *
 
+permissions:
+  contents: write
+
 jobs:
   run-daily:
     uses: SuggonM/kumo-index/.github/workflows/daily-fetch.yml@version-list
