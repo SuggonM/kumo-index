@@ -3,6 +3,9 @@ name: Daily version fetch
 on:
   workflow_call:
 
+permissions:
+  contents: write
+
 jobs:
   fetch-version:
     name: Look for new version
