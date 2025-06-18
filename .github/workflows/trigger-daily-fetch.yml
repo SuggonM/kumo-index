@@ -1,5 +1,5 @@
 # https://github.com/orgs/community/discussions/16107#discussioncomment-8786272
-name: Trigger daily fetch on version-list branch
+name: update version-list branch
 
 on:
   schedule:
