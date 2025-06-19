@@ -19,7 +19,7 @@ jobs:
       - name: Run fetch.sh
         run: |
           source ./fetch.sh
-          echo NEW_VER="$upstream" >> $GITHUB_ENV
+          echo NEW_VER="$new_version" >> $GITHUB_ENV
 
       - name: Set up commit bot info
         if: ${{ env.NEW_VER }}
@@ -30,5 +30,5 @@ jobs:
       - name: Update branch
         if: ${{ env.NEW_VER }}
         run: |
-          git commit -am "new version: ${{ env.NEW_VER }}" || true
+          git commit -am "new version: ${{ env.NEW_VER }}"
           git push
