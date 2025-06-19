@@ -6,3 +6,5 @@ current=$(tail -1 README.md | tail -c +4)
 if [[ "$upstream" != "$current" ]]; then
 	echo "1. $upstream" >> README.md
 fi
+
+echo "fetched version: $upstream"
