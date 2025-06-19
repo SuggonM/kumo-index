@@ -18,11 +18,11 @@ jobs:
 
       - name: Set up commit bot info
         run: |
-          git config user.name "Daily Fetch Bot"
-          git config user.email "actions@github.com"
+          git config user.name "daily-fetch[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Run fetch.sh, update branch
         run: |
-          ./fetch.sh
+          source ./fetch.sh
           git commit -am "new version: $upstream" || true
           git push
