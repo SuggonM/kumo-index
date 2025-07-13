@@ -40,7 +40,7 @@ for (const [platform, baseURL] of Object.entries(platformDirs)) {
 
 	const csvParsed = csvParse(listingCSV, {
 		delimiter: ';',
-		columns: [ 'filePath', 'fileSize', 'MD5hash', 'streamDirNum' ],
+		columns: [ 'filePath', 'fileSize', 'md5sum', 'streamDirNum' ],
 		skipRecordsWithError: true
 	});
 

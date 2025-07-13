@@ -3,7 +3,7 @@
 	"main": "indexer.js",
 	"type": "module",
 	"dependencies": {
-		"csv-parse": "^5.6.0",
+		"csv-parse": "^6.0.0",
 		"mkdirp": "^3.0.1",
 		"node-fetch": "^3.3.2"
 	}
