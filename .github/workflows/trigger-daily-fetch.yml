@@ -10,4 +10,4 @@ permissions:
 
 jobs:
   run-daily:
-    uses: SuggonM/kumo-index/.github/workflows/daily-fetch.yml@version-list
+    uses: ${{ github.repository }}/.github/workflows/daily-fetch.yml@version-list
